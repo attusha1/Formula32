@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<title>КП для клиники «Формула 32» — keSkill AI</title>
+<style>
+:root{--bg:#f4faf6;--card:#fff;--ink:#1d3a30;--mut:#5f7d70;--line:#dcede4;--navy:#1d6b50;--teal:#2fa47a;--soft:#e6f6ee;--warn:#fff6dc;--warnink:#5a4a12;--hg:linear-gradient(120deg,#176a4e,#2a9a72);--sh:0 8px 28px rgba(31,127,95,.10);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1b15;--card:#16271f;--ink:#e4f2ea;--mut:#9bb8aa;--line:#264034;--navy:#7fd8b1;--teal:#4cc596;--soft:#1b3328;--warn:#3a3214;--warnink:#f2e2a6;--hg:linear-gradient(120deg,#12503b,#1f7f5f);--sh:0 8px 28px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1b15;--card:#16271f;--ink:#e4f2ea;--mut:#9bb8aa;--line:#264034;--navy:#7fd8b1;--teal:#4cc596;--soft:#1b3328;--warn:#3a3214;--warnink:#f2e2a6;--hg:linear-gradient(120deg,#12503b,#1f7f5f);--sh:0 8px 28px rgba(0,0,0,.35);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;overflow-wrap:break-word;background:var(--bg);color:var(--ink);font:16px/1.65 "Nunito","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+h1,h2,h3,.logo,.v,.p{font-family:"Manrope","Nunito","Segoe UI",system-ui,Arial,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{background:var(--hg);color:#fff;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;border-radius:0 0 22px 22px;box-shadow:var(--sh)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#1f7f5f;z-index:10}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 18px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:19px}.logo span{opacity:.8;font-weight:500;font-size:14px}
+.hmeta{font-size:13px;background:rgba(255,255,255,.18);padding:5px 14px;border-radius:99px}
+.hero{padding:44px 0 12px;position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;right:-60px;top:0;width:260px;height:260px;border-radius:62% 38% 55% 45%;background:radial-gradient(circle at 30% 30%,#a8e6c9,transparent 70%);opacity:.55;z-index:-1}
+.eyebrow{display:inline-block;color:var(--navy);background:var(--soft);font-weight:700;font-size:12px;letter-spacing:.08em;padding:5px 14px;border-radius:99px}
+h1{font-size:clamp(26px,5vw,40px);line-height:1.18;margin:14px 0 12px;color:var(--navy);font-weight:800;letter-spacing:-.01em}
+.lead{color:var(--mut);max-width:680px;font-size:17px}
+h2{font-size:23px;color:var(--navy);margin:46px 0 16px;font-weight:800;display:flex;align-items:center;gap:12px}
+h2::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px var(--soft);flex:none}
+.card{background:var(--card);border-radius:22px;padding:20px;box-shadow:var(--sh)}
+.facts{display:grid;grid-template-columns:150px 1fr;background:var(--card);border-radius:24px;box-shadow:var(--sh);padding:10px 8px}
+.facts div{padding:11px 16px;border-bottom:1px dashed var(--line)}.facts div:nth-child(odd){color:var(--navy);font-weight:700}
+.facts div:nth-last-child(-n+2){border-bottom:0}
+@media(max-width:560px){.facts{grid-template-columns:1fr}.facts div:nth-child(odd){border-bottom:0;padding-bottom:0}}
+.steps{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.steps li{display:flex;gap:14px;align-items:flex-start;background:var(--card);border-radius:20px;padding:14px 18px;box-shadow:var(--sh)}
+.steps li>b{flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft);color:var(--navy);display:grid;place-items:center;font-family:"Manrope",sans-serif}
+.pk{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.pkg{background:var(--card);border:2px solid transparent;border-radius:26px;padding:22px;cursor:pointer;text-align:left;font:inherit;color:inherit;box-shadow:var(--sh);transition:transform .15s,border-color .15s}
+.pkg:hover{transform:translateY(-3px)}
+.pkg.on{border-color:var(--teal);background:var(--soft)}
+.pkg h3{margin:0 0 6px;color:var(--navy);font-size:20px;font-weight:800}.pkg .d{color:var(--mut);font-size:14px;min-height:44px;line-height:1.5}
+.pkg .p{font-size:22px;font-weight:800;margin-top:10px}.pkg .m{color:var(--mut);font-size:14px}
+.list{background:var(--card);border-radius:26px;box-shadow:var(--sh);padding:8px;overflow:hidden}
+.item{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:start;padding:16px;border-radius:18px;cursor:pointer;transition:background .15s}
+.item:hover{background:var(--soft)}
+.item input{width:20px;height:20px;margin-top:3px;accent-color:var(--teal)}
+.item .n{font-weight:700;color:var(--navy)}.item .t{font-size:14px;color:var(--mut);margin-top:2px;line-height:1.55}
+.item .c{font-weight:800;white-space:nowrap;text-align:right}.item .x{display:block;font-size:12px;color:var(--mut);font-weight:500}
+.item.off .n,.item.off .t,.item.off .c{opacity:.45}
+.item>span{min-width:0}
+@media(max-width:560px){.item{grid-template-columns:28px 1fr;gap:6px 12px}.item .c{grid-column:2;text-align:left;white-space:normal}.logo span{display:none}.card{padding:16px}.warn{padding:16px 18px}h2{font-size:20px;margin-top:38px}}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}
+.sum .card{background:var(--hg);color:#fff}.sum .l{opacity:.85;font-size:14px}.sum .v{font-size:32px;font-weight:800}.sum .note{color:#fff;opacity:.85}
+.note{font-size:13px;color:var(--mut);margin-top:10px}
+.warn{background:var(--warn);color:var(--warnink);border-radius:26px;padding:20px 24px}.warn p{margin:8px 0}
+.scroll{overflow-x:auto;border-radius:22px;box-shadow:var(--sh)}
+table{width:100%;min-width:540px;border-collapse:collapse;background:var(--card)}
+th{background:var(--soft);color:var(--navy);text-align:left;padding:13px 16px;font-size:14px}td{padding:13px 16px;border-top:1px solid var(--line);font-size:14px;vertical-align:top}
+td.r,th.r{text-align:right;white-space:nowrap;font-weight:800}tr.tot td{background:var(--soft);font-weight:800;color:var(--navy)}
+ul.sec{padding-left:0;list-style:none;display:grid;gap:10px}
+ul.sec li{background:var(--card);border-radius:18px;padding:13px 18px 13px 44px;box-shadow:var(--sh);position:relative}
+ul.sec li::before{content:"";position:absolute;left:18px;top:21px;width:10px;height:10px;border-radius:50%;background:var(--teal)}
+footer.bot{margin-top:56px;background:var(--hg);color:#fff;padding:30px 0 calc(30px + env(safe-area-inset-bottom,0px));border-radius:28px 28px 0 0}
+footer.bot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;font-size:14px}
+footer.bot a{color:inherit}footer.bot small{display:block;opacity:.8;margin-top:8px;max-width:520px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="logo">keSkill AI <span>· Keskill AI (Skillometer AI)</span></div><div class="hmeta">Коммерческое предложение · 02.11.2026</div></div></header>
+
+<main class="wrap">
+<section class="hero">
+<div class="eyebrow">КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</div>
+<h1>ИИ-агенты для клиники «Формула 32»: гарантия продлевается, соцсети ведутся</h1>
+<p class="lead">Агент сам напоминает пациентам о сроке гарантии и приглашает на профессиональную гигиену. Администратор подключается, когда пациент готов записаться.</p>
+</section>
+
+<div class="facts">
+<div>Заказчик</div><div>Клиника «Формула 32» (ООО «Эстедент»), г. Якутск</div>
+<div>Исполнитель</div><div>Keskill AI (Skillometer AI), IT Park, пр. Ленина, 1, 7 этаж, каб. 701</div>
+<div>Решение</div><div>ИИ-агент по работе с клиентами (напоминания о гарантии в WhatsApp и Max, подключение к CRM SQNS) и контент-агент для маркетинга</div>
+<div>Основание</div><div>Техническое задание «Формула 32» (дополненное, версия для согласования)</div>
+<div>Дата</div><div>02.11.2026</div>
+</div>
+
+<h2>Что решаем</h2>
+<p>Данные о пациентах и сроках гарантии уже есть в CRM SQNS. Встроенный бот CRM работает по фиксированным сценариям и не ведёт живой диалог, а список пациентов с истёкшей гарантией приходится собирать и обзванивать вручную. Мы подключаем к вашей CRM ИИ-агента, который делает это каждый день без участия администратора.</p>
+
+<h2>Как это будет работать</h2>
+<ol class="steps">
+<li><b>1</b><span><b>Запуск.</b> Каждый день агент получает из SQNS список пациентов: телефон и дата окончания гарантии.</span></li>
+<li><b>2</b><span><b>Группы.</b> Гарантия скоро истекает, истекла недавно, истекла давно. Для каждой группы согласуем свой текст.</span></li>
+<li><b>3</b><span><b>Сообщение.</b> Агент пишет в WhatsApp или Max: гарантию можно продлить на 6 месяцев записью на профессиональную гигиену.</span></li>
+<li><b>4</b><span><b>Ответ пациента.</b> Администратор получает уведомление с историей переписки, подтверждает запись и вносит её в CRM, а после визита продлевает гарантию.</span></li>
+<li><b>5</b><span><b>Без ответа.</b> Напоминание повторяется позже по правилу, которое мы согласуем с вами.</span></li>
+</ol>
+
+<h2>Выберите комплект</h2>
+<div class="pk" id="pk"></div>
+
+<h2>Состав и стоимость по пунктам ТЗ</h2>
+<div class="list" id="items"></div>
+<p class="note">✱ — ориентировочная сумма, уточняется после технической проверки в начале работ. Пункты без галочки-замка можно включать и исключать — итог пересчитается.</p>
+
+<div class="sum">
+<div class="card"><div class="l">Разово</div><div class="v" id="once">—</div></div>
+<div class="card"><div class="l">Абонентская плата в месяц</div><div class="v" id="month">—</div><div class="note" id="mdet"></div></div>
+</div>
+
+<h2>Важно</h2>
+<div class="warn">
+<p>Рассылка идёт только пациентам, давшим согласие на получение сообщений. В сообщениях нет диагнозов и подробностей лечения — только напоминание о сроке гарантии и предложение записаться.</p>
+<p>Частые повторные сообщения одним и тем же людям могут привести к блокировке номера в WhatsApp, поэтому частоту повторов согласуем с вами до запуска; для WhatsApp нужен рабочий номер клиники.</p>
+<p>На старте запись пациента и продление гарантии вносит администратор: агент ничего не меняет в CRM без человека. Пока пункт 8 не подключён, ответ пациента передаётся администратору.</p>
+<p>Реклама медицинских услуг требует пометок вроде «имеются противопоказания, необходима консультация специалиста». Первые недели посты проверяет ответственный сотрудник клиники или врач.</p>
+<p><i>Пп. 2 и 3 зависят от возможностей SQNS и аккаунтов Max и WhatsApp: способ обмена данными с CRM подтверждаем технической проверкой в начале работ, после неё уточним ✱-суммы.</i></p>
+</div>
+
+<h2>Абонентское сопровождение после запуска</h2>
+<div class="scroll"><table>
+<thead><tr><th>Тариф</th><th>Состав</th><th class="r">₽/мес</th></tr></thead>
+<tbody id="sub"></tbody>
+</table></div>
+<p class="note">Скидка за набор агентов: два агента −10%, три −15% (на агентов и объём контент-агента, платформа без скидки); итог округляется вниз до …990 ₽. Доработки сверх лимита: пакет до 5 часов — 12 000 ₽, отдельная разовая услуга, в абонентку не входит.</p>
+
+<h2>Что нужно от вас для старта</h2>
+<ul class="sec">
+<li>Доступ к SQNS (API или выгрузка) и ответственный сотрудник; рабочий номер WhatsApp и аккаунт Max.</li>
+<li>Виды лечения с гарантией и правило, как срок фиксируется в CRM; условия продления гарантии и записи на профгигиену.</li>
+<li>Подтверждение, что у пациентов есть согласие на рассылку.</li>
+<li>Для маркетинга: доступы к соцсетям клиники, логотип, фирменные цвета, фото клиники и процедур, список услуг и запрещённых тем, Telegram сотрудника, который будет одобрять посты (пациентам в Telegram ничего не отправляется).</li>
+</ul>
+
+<h2>Безопасность и конфиденциальность данных</h2>
+<ul class="sec">
+<li><b>NDA с первого дня.</b> Перед началом работ подписываем соглашение о неразглашении: данные не передаются третьим лицам и используются только для обслуживания вашей клиники.</li>
+<li><b>Врачебная тайна.</b> Сообщения пациентам не содержат диагнозов и подробностей лечения. Агент берёт из CRM только то, что нужно для напоминания: телефон и дату окончания гарантии.</li>
+<li><b>Защищённые серверы.</b> Данные хранятся на российских серверах с шифрованием и ежедневным резервным копированием; доступ есть только у авторизованного персонала.</li>
+<li><b>Разграничение доступов.</b> Каждый сотрудник клиники видит только то, что нужно для его роли.</li>
+<li><b>Ваши данные — только ваши.</b> Данные клиники и пациентов изолированы, не используются для обучения других моделей и не передаются другим клиентам.</li>
+<li><b>Соответствие 152-ФЗ.</b> Работаем в соответствии с законодательством РФ о персональных данных; рассылка выполняется только пациентам с согласием.</li>
+</ul>
+<p class="note">Документ предварительный, не является офертой; итоговый состав, сроки и оплата — по Договору.</p>
+</main>
+
+<footer class="bot"><div class="wrap">
+<div><b>keSkill AI</b><br>Keskill AI (Skillometer AI)<br>IT Park, пр. Ленина, 1, 7 этаж, каб. 701, г. Якутск<small>Коммерческое предложение для клиники «Формула 32» от 02.11.2026</small></div>
+<div>Контакт: Айталина<br><a href="https://keskill.com" target="_blank" rel="noopener">keskill.com</a><br><a href="https://instagram.com/keskill_ai" target="_blank" rel="noopener">instagram.com/keskill_ai</a></div>
+</div></footer>
+
+<script>
+var ITEMS=[
+{id:1,n:'Базовый минимум',t:'Личный кабинет keSkill, доступы для трёх сотрудников клиники, настройка под клинику, обучение, пробный запуск',p:8000,req:1},
+{id:2,n:'Подключение к CRM SQNS',t:'Получение из CRM списка пациентов, телефонов и дат окончания гарантии; передача в CRM результата обработки',p:15000,req:1,s:1},
+{id:3,n:'Подключение Max и WhatsApp',t:'Подключаем рабочие аккаунты клиники, настраиваем отправку и приём сообщений в обоих каналах',p:6000,req:1,s:1},
+{id:4,n:'Напоминания о продлении гарантии',t:'Ежедневная проверка CRM, группы пациентов, свой текст для каждой, повтор не ответившим по согласованному правилу, только пациентам с согласием',p:12000,req:1},
+{id:5,n:'Ответ пациента — администратору',t:'Уведомление администратору с историей переписки и контактом; ни один ответ не теряется',p:5000,req:1},
+{id:6,n:'Недельный отчёт руководителю',t:'Раз в неделю: сколько напоминаний отправлено, сколько пациентов ответило и записалось',p:4000},
+{id:7,n:'Маркетинг: настройка контент-агента',t:'Подключаем соцсети, фирменный стиль, темы и расписание; агент пишет тексты, делает карточки и видео (объём S: 60 публикаций, 25 видео-монтажей в месяц); каждый пост вы одобряете одним нажатием',p:12450,s:1,agent:1},
+{id:8,n:'Запись пациента без администратора (по желанию)',t:'Агент по входящим заявкам сам отвечает пациентам, собирает заявку на профгигиену по анкете и передаёт администратору готовую; отвечает и новым пациентам. +7 990 ₽/мес',p:12000,s:1,agent:1}
+];
+var PK=[
+{k:'start',n:'Старт',d:'Напоминания о гарантии и передача ответов администратору',ids:[]},
+{k:'opt',n:'Оптимальный',d:'Старт и недельный отчёт руководителю',ids:[6]},
+{k:'full',n:'Полный',d:'Оптимальный и ведение соцсетей контент-агентом',ids:[6,7]}
+];
+var sel={};ITEMS.forEach(function(i){if(i.req)sel[i.id]=1});
+var cur='full';
+function fmt(x){return Math.round(x).toLocaleString('ru-RU').replace(/\u00a0/g,' ')+' ₽'}
+function floor990(x){return Math.floor((x-990)/1000)*1000+990}
+function calc(){
+ var once=0;ITEMS.forEach(function(i){if(sel[i.id])once+=i.p});
+ var al=4990,content=sel[7]?10000:0,tu=sel[8]?7990:0;
+ var cnt=1+(sel[7]?1:0)+(sel[8]?1:0);
+ var raw=al+content+tu,disc=cnt==2?.10:cnt>=3?.15:0;
+ var agents=disc?floor990(raw*(1-disc)):raw;
+ return{once:once,al:al,content:content,tu:tu,cnt:cnt,raw:raw,agents:agents,month:4990+agents,disc:raw-agents};
+}
+function render(){
+ var h='';
+ ITEMS.forEach(function(i){
+  var on=!!sel[i.id];
+  h+='<label class="item'+(on?'':' off')+'"><input type="checkbox" '+(on?'checked ':'')+(i.req?'disabled ':'')+'data-id="'+i.id+'"><span><span class="n">'+i.id+'. '+i.n+(i.req?' 🔒':'')+'</span><span class="t" style="display:block">'+i.t+'</span></span><span class="c">'+fmt(i.p)+(i.s?' ✱':'')+'<span class="x">'+(i.req?'обязательно':'можно исключить')+'</span></span></label>';
+ });
+ document.getElementById('items').innerHTML=h;
+ var c=calc();
+ document.getElementById('once').textContent=fmt(c.once)+(sel[2]||sel[3]||sel[7]||sel[8]?' ✱':'');
+ document.getElementById('month').textContent=fmt(c.month);
+ document.getElementById('mdet').textContent=c.disc?('скидка за набор агентов: −'+fmt(c.disc)):'';
+ var r='<tr><td><b>Платформа keSkill AI</b></td><td>Личный кабинет и CRM, трекер задач, подключение каналов связи, хостинг, техподдержка в рабочее время</td><td class="r">4 990 ₽</td></tr>';
+ r+='<tr><td><b>Агент по работе с клиентами</b></td><td>Ежедневная проверка CRM, напоминания о продлении гарантии в WhatsApp и Max, передача ответов администратору</td><td class="r">4 990 ₽</td></tr>';
+ if(sel[7])r+='<tr><td><b>Контент-агент (объём S)</b></td><td>До 60 публикаций, 25 видео-монтажей, 900 AI-токенов в месяц, одобрение постов в Telegram-боте</td><td class="r">10 000 ₽</td></tr>';
+ if(sel[8])r+='<tr><td><b>Агент по входящим заявкам</b></td><td>Ответы пациентам, сбор заявки на профгигиену, память о пациенте</td><td class="r">7 990 ₽</td></tr>';
+ if(c.disc)r+='<tr><td><b>Скидка за набор агентов</b></td><td>'+(c.cnt==2?'−10%':'−15%')+', итог округляется вниз до …990 ₽</td><td class="r">−'+fmt(c.disc)+'</td></tr>';
+ r+='<tr class="tot"><td colspan="2">Итого абонентка</td><td class="r">'+fmt(c.month)+'</td></tr>';
+ document.getElementById('sub').innerHTML=r;
+ var p='';
+ PK.forEach(function(k){
+  var s={};ITEMS.forEach(function(i){if(i.req)s[i.id]=1});k.ids.forEach(function(x){s[x]=1});
+  var o=0;ITEMS.forEach(function(i){if(s[i.id])o+=i.p});
+  var mm=s[7]?4990+floor990((4990+10000)*.9):9980;
+  p+='<button type="button" class="pkg'+(cur===k.k?' on':'')+'" data-k="'+k.k+'"><h3>'+k.n+'</h3><div class="d">'+k.d+'</div><div class="p">'+fmt(o)+(s[2]?' ✱':'')+'</div><div class="m">+ '+fmt(mm)+'/мес</div></button>';
+ });
+ document.getElementById('pk').innerHTML=p;
+}
+document.addEventListener('change',function(e){
+ var id=e.target.getAttribute&&e.target.getAttribute('data-id');if(!id)return;
+ if(e.target.checked)sel[id]=1;else delete sel[id];
+ cur='';render();
+});
+document.addEventListener('click',function(e){
+ var b=e.target.closest&&e.target.closest('.pkg');if(!b)return;
+ var k=PK.filter(function(x){return x.k===b.getAttribute('data-k')})[0];
+ sel={};ITEMS.forEach(function(i){if(i.req)sel[i.id]=1});k.ids.forEach(function(x){sel[x]=1});
+ cur=k.k;render();
+});
+var k0=PK[2];k0.ids.forEach(function(x){sel[x]=1});render();
+</script>
+</body>
+</html>
